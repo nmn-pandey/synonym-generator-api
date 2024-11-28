@@ -69,6 +69,9 @@ def generate_synonyms(word: str, context: str = None) -> dict:
         content = content[7:]  # Remove leading ```json
     if content.endswith("```"):
         content = content[:-3]  # Remove trailing ```
+
+    # Try to ensure valid JSON by replacing single quotes with double quotes
+    content = content.replace("'", '"')
     
     import json
     # Parse JSON response
