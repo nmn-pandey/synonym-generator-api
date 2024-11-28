@@ -22,7 +22,7 @@ The Synonym Generator API is designed to generate and rank synonyms for a given 
 
 ## Example Use Case
 
-#### Example 1 - With no given context
+#### Example 1 - Basic Synonym Generation from given word (**Without Context**)
 
  **Request:**
  ```json
@@ -62,7 +62,7 @@ The Synonym Generator API is designed to generate and rank synonyms for a given 
    }
 ```
 
-#### Example 2 - Using context for ranking only
+#### Example 2 - Synonym Generation from given word, with Context-Aware Synonym Ranking
 
  **Request:**
  ```json
@@ -104,7 +104,7 @@ The Synonym Generator API is designed to generate and rank synonyms for a given 
    }
 ```
 
-#### Example 3 - Generating context only synonyms
+#### Example 3 - Synonym Generation Using Word and Context, with Contextual Ranking
 
  **Request:**
  ```json
