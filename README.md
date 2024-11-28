@@ -11,6 +11,15 @@ The Synonym Generator API is designed to generate and rank synonyms for a given 
 - **Ranking**: Ranks synonyms based on semantic similarity to the input word and context (if provided).
 - **JSON Output**: Returns results in a structured JSON format for easy parsing.
 
+### API Parameters
+
+| Parameter | Type | Description | Default |
+|-----------|------|-------------|---------|
+| `word` | String | Input word for synonym generation | Required |
+| `context` | String | Optional contextual information | Optional |
+| `contextual_only` | Boolean | Strict contextual synonym generation | Optional: default = `False` |
+
+
 ## Example Use Case
 
 #### Example 1 - With no given context
@@ -59,7 +68,8 @@ The Synonym Generator API is designed to generate and rank synonyms for a given 
  ```json
    {
      "word": "cold",
-     "context": "His tone was cold during the argument."
+     "context": "His tone was cold during the argument.",
+     "contextual_only": false
    }
  ```
 
@@ -256,14 +266,6 @@ synonym_api/
 5. **Test the API:**
     - Test the API using Postman or curl
     - Send a POST request to http://127.0.0.1:8000/generate-synonyms/ with a JSON body containing the word, context (if applicable), and contextual_only (if applicable).
-
-### API Parameters
-
-| Parameter | Type | Description | Default |
-|-----------|------|-------------|---------|
-| `word` | String | Input word for synonym generation | Required |
-| `context` | String | Optional contextual information | Optional |
-| `contextual_only` | Boolean | Strict contextual synonym generation | `False` |
 
 ### API Usage Examples
 
