@@ -1,4 +1,4 @@
-# Synonym Generation API: Advanced NLP Solution
+# Synonym Generation API: Context-aware ranked Synonym generation
 
 ## Project Overview
 
