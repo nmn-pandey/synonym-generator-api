@@ -11,6 +11,131 @@ The Synonym Generator API is designed to generate and rank synonyms for a given 
 - **Ranking**: Ranks synonyms based on semantic similarity to the input word and context (if provided).
 - **JSON Output**: Returns results in a structured JSON format for easy parsing.
 
+## Example Use Case
+
+#### Example 1 - With no given context
+
+ **Request:**
+ ```json
+     {
+     "word": "cold"
+     }
+ ```
+
+ **Response:**
+ ```json
+  {
+    "word": "cold",
+    "synonyms": [
+        "chilly",
+        "frigid",
+        "unfriendly",
+        "detached",
+        "cool",
+        "icy",
+        "nonchalant",
+        "frosty",
+        "standoffish",
+        "subzero"
+    ],
+    "ranked synonyms": [
+        "chilly",
+        "icy",
+        "frigid",
+        "cool",
+        "frosty",
+        "nonchalant",
+        "unfriendly",
+        "subzero",
+        "standoffish",
+        "detached"
+       ]
+   }
+```
+
+#### Example 2 - Using context for ranking only
+
+ **Request:**
+ ```json
+   {
+     "word": "cold",
+     "context": "His tone was cold during the argument."
+   }
+ ```
+
+ **Response:**
+ ```json
+  {
+    "word": "cold",
+    "synonyms": [
+        "chilly",
+        "frigid",
+        "unfriendly",
+        "detached",
+        "cool",
+        "icy",
+        "nonchalant",
+        "frosty",
+        "standoffish",
+        "subzero"
+    ],
+     "ranked synonyms": [
+       "detached",
+       "unfriendly",
+       "standoffish",
+       "frosty",
+       "icy",
+       "chilly",
+       "frigid",
+       "nonchalant",
+       "cool",
+       "subzero"
+     ]
+   }
+```
+
+#### Example 3 - Generating context only synonyms
+
+ **Request:**
+ ```json
+   {
+     "word": "cold",
+     "context": "His tone was cold during the argument.",
+     "contextual_only": true
+   }
+ ```
+
+ **Response:**
+ ```json
+  {
+    "word": "cold",
+    "synonyms": [
+        "unemotional",
+        "distant",
+        "indifferent",
+        "aloof",
+        "dispassionate",
+        "frosty",
+        "icy",
+        "frigid",
+        "detached",
+        "clinical"
+    ],
+    "ranked synonyms": [
+        "frigid",
+        "dispassionate",
+        "frosty",
+        "unemotional",
+        "icy",
+        "indifferent",
+        "aloof",
+        "distant",
+        "detached",
+        "clinical"
+    ]
+   }
+```
+
 ## How Synonyms are Generated
 
 The synonym generation process is designed to provide diverse and meaningful options, tailored to the input word and optional context. OpenAI's GPT models are leveraged to ensure linguistic accuracy and relevance across multiple domains.
